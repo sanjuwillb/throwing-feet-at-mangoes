@@ -52,7 +52,7 @@ function draw() {
   textSize(25);
   fill("white")
   stroke("lime")
-  text("Press Space to Try Again",50 ,50);
+  text("Press Space to Recall Your Trusty Stone",50 ,50);
   image(boy ,200,340,200,300);
   
 
