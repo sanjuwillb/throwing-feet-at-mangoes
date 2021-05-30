@@ -53,7 +53,7 @@ function draw() {
   fill("white")
   stroke("lime")
   text("Press Space to Recall Your Trusty Stone",50 ,50);
-  image(boy,200,340,200,300);
+  image(boy ,200,340,200,300);
   
 
   treeObj.display();
