@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -8,7 +7,7 @@ const Constraint=Matter.Constraint;
 
 var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
-var world,boy;
+var world,boy,i
 
 //Declare launcherObject and launchForce variable here
 var launcherObject
@@ -24,7 +23,7 @@ function setup() {
 	world = engine.world;
   strokeWeight(4)
 	stoneObj=new stone(235,420,40); 
-
+  i = 0
 	mango1=new mango(1100,100,30);
   mango2=new mango(1170,130,30);
 	mango3=new mango(1010,140,30);
@@ -93,12 +92,20 @@ function draw() {
 
 //create mouseDragged function here
 function mouseDragged(){
-  Matter.Body.setPosition(stoneObj.body,{x:mouseX,y:mouseY})
+  if (i === 0){
+    if (mouseX < 385 && mouseX > 85 && mouseY < 570 && mouseY > 270){
+      Matter.Body.setPosition(stoneObj.body,{x:mouseX,y:mouseY})
+      console.log(mouseX,mouseY)
+    }
+  }
 }
-
 //create mouseReleased function here
 function mouseReleased(){
-  launcherObject.fly()
+  i = 1
+  if (i === 1){
+    launcherObject.fly()
+    console.log("chicken")
+  }
 }
 
 //create keyPressed function here
@@ -107,6 +114,7 @@ function keyPressed(){
     stoneObj.body.x=235
     stoneObj.body.y=420;
     launcherObject.attach()
+    i = 0
   }
 }
 
