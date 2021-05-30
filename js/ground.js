@@ -21,7 +21,7 @@ class ground
 			rectMode(CENTER)
 			//strokeWeight(4);
 			stroke("cyan")
-			fill("grey")
+			fill("black")
 			rect(0,0,this.w, this.h);
 			pop()
 			
