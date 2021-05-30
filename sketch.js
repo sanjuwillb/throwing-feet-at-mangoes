@@ -93,7 +93,7 @@ function draw() {
 //create mouseDragged function here
 function mouseDragged(){
   if (i === 0){
-    if (mouseX < 385 && mouseX > 85 && mouseY < 570 && mouseY > 270){
+    if (mouseX < 485 && mouseY < 670 && mouseY > 170){
       Matter.Body.setPosition(stoneObj.body,{x:mouseX,y:mouseY})
       console.log(mouseX,mouseY)
     }
@@ -111,8 +111,7 @@ function mouseReleased(){
 //create keyPressed function here
 function keyPressed(){
   if (keyWentDown("space")){
-    stoneObj.body.x=235
-    stoneObj.body.y=420;
+    stoneObj=new stone(235,420,40); 
     launcherObject.attach()
     i = 0
   }
