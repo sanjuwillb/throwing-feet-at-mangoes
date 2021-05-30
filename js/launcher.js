@@ -13,6 +13,9 @@ class Launcher{
     fly(){
         this.chain.bodyA = null
     }
+    attach(){
+        this.chain.bodyA = stoneObj.body
+    }
     display(){
         if (this.chain.bodyA){
             push()

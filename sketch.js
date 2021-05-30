@@ -76,18 +76,18 @@ function draw() {
   launcherObject.display()
 
 
-  detectollision(stoneObj,mango1);
-  detectollision(stoneObj,mango2);
-  detectollision(stoneObj,mango3);
-  detectollision(stoneObj,mango4);
-  detectollision(stoneObj,mango5);
-  detectollision(stoneObj,mango6);
-  detectollision(stoneObj,mango7);
-  detectollision(stoneObj,mango8);
-  detectollision(stoneObj,mango9);
-  detectollision(stoneObj,mango10);
-  detectollision(stoneObj,mango11);
-  detectollision(stoneObj,mango12);
+  detectcollision(stoneObj,mango1);
+  detectcollision(stoneObj,mango2);
+  detectcollision(stoneObj,mango3);
+  detectcollision(stoneObj,mango4);
+  detectcollision(stoneObj,mango5);
+  detectcollision(stoneObj,mango6);
+  detectcollision(stoneObj,mango7);
+  detectcollision(stoneObj,mango8);
+  detectcollision(stoneObj,mango9);
+  detectcollision(stoneObj,mango10);
+  detectcollision(stoneObj,mango11);
+  detectcollision(stoneObj,mango12);
   keyPressed()
 }
 
@@ -104,12 +104,13 @@ function mouseReleased(){
 //create keyPressed function here
 function keyPressed(){
   if (keyWentDown("space")){
-    stoneObj=new stone(235,420,40);
-    launcherObject = new Launcher(stoneObj.body,{x:235,y:420})
+    stoneObj.body.x=235
+    stoneObj.body.y=420;
+    launcherObject.attach()
   }
 }
 
-  function detectollision(lstone,lmango){
+  function detectcollision(lstone,lmango){
 
   mangoBodyPosition=lmango.body.position
   stoneBodyPosition=lstone.body.position
